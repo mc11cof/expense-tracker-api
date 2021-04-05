@@ -1,5 +1,4 @@
-name: Python unittest
-
+name: Python Django tests
 on: [push]
 
 jobs:
@@ -20,6 +19,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Test with unittest
+    - name: Test with python manage.py
       run: |
-        python -m unittest
+        python manage.py test
